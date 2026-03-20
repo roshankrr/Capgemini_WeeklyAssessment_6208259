@@ -1,4 +1,4 @@
-import { test } from "../../Playwright/node_modules/@playwright/test";
+import { test } from "@playwright/test";
 
 test("task1", async ({ page }) => {
   await page.goto("https://demoapps.qspiders.com/ui?scenario=1");

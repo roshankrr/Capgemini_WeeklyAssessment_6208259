@@ -1,4 +1,4 @@
-import { test } from "../../Playwright/node_modules/@playwright/test";
+import { test } from "@playwright/test";
 
 test("Fetch silver medal count of Armenia", async ({ page }) => {
   await page.goto("https://olympics.com/en/olympic-games/tokyo-2020/medals");
