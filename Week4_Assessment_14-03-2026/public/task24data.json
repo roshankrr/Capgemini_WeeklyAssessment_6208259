@@ -1,0 +1,5 @@
+[{"firstName":"Roshan","lastName":"Kumar","email":"roshankrr@gmail.com","gender":"Male","mobile":"1234567890", "dob":{"month":"January","year":"2000", "day":"01"},"subject":"Math","hobby":"Sports","image":"../screenshot/amazon.png","address":"H.2351 gAYTRI Colony","state":"NCR","city":"Gurgaon"},
+
+{"firstName":"Ramesh","lastName":"Cole","email":"ramesh@gmail.com","gender":"Male","mobile":"1234567890", "dob":{"month":"March","year":"2002", "day":"10"},"subject":"Hindi","hobby":"Music","image":"../screenshot/amazon.png","address":"26th South St","state":"Rajasthan","city":"Jaipur"},
+
+{"firstName":"Rahul","lastName":"Rawat","email":"rahul@gmail.com","gender":"Male","mobile":"1234567890", "dob":{"month":"December","year":"1999", "day":"12"},"subject":"Math","hobby":"Reading","image":"../screenshot/amazon.png","address":"Haldi Ghati","state":"Uttar Pradesh","city":"Lucknow"}]
