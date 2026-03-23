@@ -5,5 +5,5 @@ test("Login", async ({ page }) => {
   await page.goto(loginData.url);
   let login = new Login(page);
   await login.loginFunction(loginData);
-  page.screenshot({ path: "./screenshots/login.png" });
+  await page.screenshot({ path: "./screenshots/login.png" });
 });
