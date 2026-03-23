@@ -19,7 +19,7 @@ test("add Post on buzz", async ({ page }) => {
   );
   await post.ShareBtn.click();
   await page.goto(
-    "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    "https://opensource-demo.orangehrmlive.com/web/index.php/auth/logout",
   );
   await page.goto(loginData.url);
   login = new Login(page);
