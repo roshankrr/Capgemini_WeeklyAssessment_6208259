@@ -1,7 +1,7 @@
-import { test } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import restFullBookersDataJson from "./authdata.json";
 
-//auth token generate
+//AUTH TOKEN GENERATING
 let baseUrl: string = restFullBookersDataJson.base_url;
 let token: string;
 let bookingid: number;
@@ -18,17 +18,19 @@ test("Auth Token", async ({ request }) => {
   let response = await r1.json();
   console.log(response);
   token = response.token;
+  await expect(token).toBeTruthy();
   console.log(token);
 });
 
-//get all booking ids
+//GET ALL BOOKING ID's
 test("get all booking ids", async ({ request }) => {
   let r1 = await request.get(`${baseUrl}/booking`, {});
   let response = await r1.json();
   console.log(response);
+  await expect(response).toBeTruthy();
 });
 
-//get booking by id
+//GET A BOOKING USING ITS ID
 test("get booking by id", async ({ request }) => {
   let r1 = await request.get(
     `${baseUrl}/booking/${restFullBookersDataJson.id}`,
@@ -56,6 +58,7 @@ test("post booking", async ({ request }) => {
   bookingid = response.bookingid;
 });
 
+//UPDATING A BOOKING USING ITS ID
 test("update booking", async ({ request }) => {
   let r1 = await request.put(`${baseUrl}/booking/${bookingid}`, {
     data: {
@@ -78,6 +81,7 @@ test("update booking", async ({ request }) => {
   console.log(response);
 });
 
+//PARTIALLY UPDATING  BOOKING
 test(" partial update data", async ({ request }) => {
   let r1 = await request.patch(`${baseUrl}/booking/${bookingid}`, {
     data: {
@@ -93,11 +97,11 @@ test(" partial update data", async ({ request }) => {
   console.log(response);
 });
 
+//DELETING A BOOKING
 test("delete the booking", async ({ request }) => {
   let r1 = await request.delete(`${baseUrl}/booking/${bookingid}`, {
     headers: {
       "content-type": "application/json",
-      // Authorization: `Basic ${token}`,
       cookie: `token=${token}`,
     },
   });
